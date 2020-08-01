@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'web_app/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_app/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    
+   {% include 'web_app/navbar.html' %}
+
+   <div class="mt-5 pt-4">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+    {% endif %}
+  </div>
+
+
+   {% block content %}
+
+   {% endblock %}
+
+
+    <!-- Footer Section Begin -->
+    {% include 'web_app/footer.html' %}
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'web_app/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'web_app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web_app/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web_app/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'web_app/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web_app/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'web_app/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'web_app/js/main.js' %}"></script>
+</body>
+
+</html>

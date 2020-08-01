@@ -1,0 +1,37 @@
+{% extends 'web_app/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <!-- Begin Page Content -->
+      <div class="container-fluid" style="max-width: 600px; margin-top: 150px; margin-bottom: 150px;">
+          <div class="card o-hidden border-0 shadow-lg my-4">
+          <div class="card-body p-0" >
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Create Account</h1>
+                  </div>
+                  <form class="user" method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                  <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">CREATE ACCOUNT</button>
+                  </div>
+                  </form>
+                  <div class="border-bottom pt-3">
+                    <small class="text-muted">Already Have an account? <a href="{% url 'login' %}">Login</a></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+
+{% endblock content %}

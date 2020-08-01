@@ -1,0 +1,120 @@
+{% extends 'web_app/base.html' %}
+
+{% load static %}
+
+{% block title %} Checkout {% endblock %}
+
+{% block content %}
+
+<main >
+    <div class="container wow fadeIn">
+      <h2 class="my-5 h2 text-center">Checkout form</h2>
+      <div class="row">
+        <div class="col-md-8 mb-4">
+          <div class="card">
+            <form class="card-body"> <!--method="POST" -->
+              {% csrf_token %}
+
+              <h3>Delivery Details</h3>
+
+              <div class='hideable_delivery_form'>
+
+                  <div class="row">
+                      <div class="col-lg-4 col-md-12 mb-4">
+                        <label for="first_name">First Name</label>
+                        {{ form.first_name }}
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-lg-4 col-md-12 mb-4">
+                        <label for="last_name">Last Name</label>
+                        {{ form.last_name }}
+                      </div>
+                  </div>
+   
+                  <div class="row">
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <label for="delivery_address">Delivery Address</label>
+                        {{ form.delivery_address }}
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                      <label for="delivery_address">Mobile Number</label>
+                      {{ form.mobi_number }}
+                    </div>
+                  </div>
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" name="set_default_delivery" id="set_default_delivery">
+                  <label class="custom-control-label" for="set_default_delivery">Save as default delivery address</label>
+                </div>
+
+              </div>
+
+              {% if default_delivery_address %}
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="use_default_delivery" id="use_default_delivery">
+                <label class="custom-control-label" for="use_default_delivery">Use default delivery address: {{ default_delivery_address.delivery_address|truncatechars:10 }}</label>
+              </div>
+              {% endif %}
+
+              <hr>
+
+              <h3>Payment option</h3>
+
+              <div class="d-block my-3">
+                {% for value, name in form.fields.payment_option.choices %}
+                <div class="custom-control custom-radio">
+                  <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
+                </div>
+                {% endfor %}
+              </div>
+
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          {% include "web_app/order_snippet.html" %}
+        </div>
+
+      </div>
+
+    </div>
+</main>
+
+{% endblock %}
+
+
+{% block extra_scripts %}
+<script>
+var hideable_delivery_form = $('.hideable_delivery_form');
+var hideable_billing_form = $('.hideable_billing_form');
+
+var use_default_delivery = document.querySelector("input[name=use_default_delivery]");
+var use_default_billing = document.querySelector("input[name=use_default_billing]");
+
+use_default_delivery.addEventListener('change', function() {
+  if (this.checked) {
+    hideable_delivery_form.hide();
+  } else {
+    hideable_delivery_form.show();
+  }
+})
+
+use_default_billing.addEventListener('change', function() {
+  if (this.checked) {
+    hideable_billing_form.hide();
+  } else {
+    hideable_billing_form.show();
+  }
+})
+
+</script>
+{% endblock extra_scripts %}

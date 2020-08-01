@@ -1,0 +1,126 @@
+{% extends 'web_app/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block title %} Offer Products {% endblock %}
+
+{% block content %}
+
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>Offers <span>.</span></h2>
+                        <a href="{% url 'fashion-home' %}">Home</a>
+                        <a class="active" href="#">Offers </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <img src="{% static 'web_app/img/add.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Categories Page Section Begin -->
+    <section class="categories-page spad">
+        <div class="container">
+            <div class="categories-controls">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="categories-filter">
+                            <div class="cf-left">
+                                <span>{{offer_count}} Products</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in offer_prods %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="{% url 'product-detail' slug=product.slug %}">
+                                    <img src="{{product.image.url}}" alt="">
+                                </a>
+                                <div class="p-status">{{product.category}}</div>
+                                <div class="hover-icon">
+                                    <a href="{{product.image.url}}" class="pop-up"><img src="{% static 'web_app/img/icons/zoom-plus.png' %}"
+                                            alt=""></a>
+                                </div>
+                            </figure>
+                            <div class="product-text">
+                                <a href="{% url 'product-detail' slug=product.slug %}">
+                                    <h6>{{product.title}}</h6>
+                                </a>
+                            {% if product.discount_price %}
+								<span class="mr-1">
+									<del>Kshs {{ product.price|intcomma }}</del>
+								</span>
+								    <span>Kshs {{ product.discount_price|intcomma }}</span>
+							{% else %}
+								<span>Kshs {{ product.price|intcomma }}</span>
+							{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}    
+                
+                <!-- <div class="col-lg-6 col-md-6">
+                    <div class="row">
+                        {% for product in other_four_prods %}
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single-product-item">
+                                    <figure>
+                                        <img src="{{product.image.url}}" alt="">
+                                        <div class="p-status sale">{{product.category}}</div>
+                                    </figure>
+                                    <div class="product-text">
+                                        <a href="#">
+                                            <h6>{{product.title}}</h6>
+                                        </a>
+                                        {% if product.discount_price %}
+								<span class="mr-1">
+									<del>Kshs {{ product.price|intcomma }}</del>
+								</span>
+								    <span>Kshs {{ product.discount_price|intcomma }}</span>
+							{% else %}
+								<span>Kshs {{ product.price|intcomma }}</span>
+							{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <img src="{{large_prod.image.url}}" alt="">
+                            <div class="p-status">{{product.category}}</div>
+                            <div class="hover-icon">
+                                <a href="{{large_prod.image.url}}" class="pop-up"><img src="{% static 'web_app/img/icons/zoom-plus.png' %}"
+                                        alt=""></a>
+                            </div>
+                        </figure>
+                        <div class="product-text">
+                            <a href="#">
+                                <h6>{{large_prod.title}}</h6>
+                            </a>
+                            <p>KSH {{large_prod.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- Categories Page Section End -->
+
+
+{% endblock %}

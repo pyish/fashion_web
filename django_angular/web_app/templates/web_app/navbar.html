@@ -1,0 +1,77 @@
+{% load static %}
+
+{% load cart_template_tags %}
+
+ <!-- Search model -->
+ <div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form" action="{% url 'search_results' %}" method="get">
+            <input  name="qproduct" type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="container-fluid">
+        <div class="inner-header">
+            <div class="logo">
+                <a href="{% url 'fashion-home' %}"><img src="{% static 'web_app/img/logo.png' %}" alt=""></a>
+            </div>
+            <div class="header-right">
+                <img src="{% static 'web_app/img/icons/search.png' %}" alt="" class="search-trigger">
+                <a href="{% url 'order-summary' %}">
+                    <img src="{% static 'web_app/img/icons/bag.png' %}" alt="">
+                    <span>{{ request.user|cart_product_count }}</span>
+                </a>
+            </div>
+            {% if not user.is_authenticated %}
+            <div class="user-access">
+                <a href="{% url 'fashion-register' %}">Register</a>
+                <a href="{% url 'login' %}" class="in">Sign in</a>
+            </div>
+            {% else %}
+            <div class="user-access">
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+            {% endif %}
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a class="active" href="{% url 'fashion-home' %}">Home</a></li>
+                    <li><a href="#">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'fashion-offers' %}">Offer Products</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'order-summary' %}">My Orders</a></li>
+                                <li><a href="/checkout/">Check out</a></li>
+                            {% endif %}    
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <!-- <li><a href="./check-out.html">Blog</a></li> -->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- Header Info Begin -->
+<div class="header-info">
+    <div class="container-fluid">
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-md-2">
+                <div class="header-item">
+                    <a href="{% url 'category-detail' pk=category.pk %}">
+                        <p>{{category}}</p>
+                    </a>    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Header Info End -->
+<!-- Header End -->

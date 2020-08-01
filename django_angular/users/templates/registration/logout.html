@@ -1,0 +1,22 @@
+{% extends 'web_app/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- Content Wrapper -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                     <div class="alert alert-danger" role="alert">
+                        <p>You have been logged out</p>
+                    </div>
+                    <a href="{% url 'login' %}">Login Again</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock %}

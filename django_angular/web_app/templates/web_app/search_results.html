@@ -1,0 +1,83 @@
+
+{% extends "web_app/base.html" %}
+
+{% load static %}
+{% load humanize %}
+
+{% block title %} {{product.title}} {% endblock title %}}
+
+{% block content %}
+  
+
+    <div class="container dark-grey-text mt-5">
+    {% for product in search_query_rslt %} 
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">  
+          <img src="{{product.image.url}}" class="img-fluid" alt="">
+          
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">{{ product.title}}</span>
+              </a>
+            </div>
+
+            <p class="lead">
+              {% if product.discount_price %}
+              <span class="mr-1">
+                <del>Kshs {{ product.price|intcomma  }}</del>
+              </span>
+              <span>Kshs {{ product.discount_price|intcomma  }}</span>
+              {% else %}
+              <span>Kshs {{ product.price|intcomma  }}</span>
+              {% endif %}
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{ product.description }}</p>
+
+            {% comment %} <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button class="btn btn-primary btn-md my-0 p" type="submit">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form> {% endcomment %}
+            <a href="{{ product.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+              Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+            <a href="{{ product.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+              Remove from cart
+            </a>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+      {% endfor %}
+    </div>
+
+
+ 
+
+
+{% endblock content %}

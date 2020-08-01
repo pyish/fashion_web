@@ -1,0 +1,122 @@
+{% extends 'web_app/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>{{product.title}}<span>.</span></h2>
+                        <a href="{% url 'fashion-home' %}">Home</a>
+                        <a class="active" href="#">{{product.category}}</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <img src="img/add.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Product Page Section Beign -->
+    <section class="product-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="product-slider owl-carousel">
+                        <div class="product-img">
+                            <figure>
+                                <img src="{{product.image.url}}" alt="">
+                                <div class="p-status">{{product.category}}</div>
+                            </figure>
+                        </div>
+                        <div class="product-img">
+                            <figure>
+                                <img src="{{product.image.url}}" alt="">
+                                <div class="p-status">{{product.category}}</div>
+                            </figure>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-content">
+                        <h2>{{product.title}}</h2>
+                        <div class="pc-meta">
+                            {% if product.discount_price %}
+								<h5 class="mr-1 mt-1 mb-3">
+									<del>Kshs {{ product.price|intcomma }}</del>
+								</h5>
+								    <h5>Kshs {{ product.discount_price|intcomma }}</h5>
+							{% else %}
+								<h5>Kshs {{ product.price|intcomma }}</h5>
+							{% endif %}
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p>{{product.description}}</p>
+                        <ul class="tags">
+                            <li><span>Category :</span> {{product.category}}</li>
+                            <li><span>Tags :</span> {{product.title}}, {{product.category}} ,{{product.description}}</li>
+                        </ul>
+                        <a href="{{ product.get_add_to_cart_url }}" class="primary-btn pc-btn">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Page Section End -->
+
+    <!-- Related Product Section Begin -->
+    <section class="related-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>Related Products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for related_product in related_products %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-product-item">
+                        <figure>
+                            <a href="{% url 'product-detail' slug=related_product.slug %}"><img src="{{related_product.image.url}}" alt=""></a>
+                            <div class="p-status">{{related_product.category}}</div>
+                        </figure>
+                        <div class="product-text">
+                            <a href="{% url 'product-detail' slug=related_product.slug %}">
+                                <h6>{{related_product.title}}</h6>
+                            </a>
+                            {% if related_product.discount_price %}
+								<span class="mr-1">
+									<del>Kshs {{ related_product.price|intcomma }}</del>
+								</span>
+								    <span>Kshs {{ related_product.discount_price|intcomma }}</span>
+							{% else %}
+								<span>Kshs {{ related_product.price|intcomma }}</span>
+							{% endif %}
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->
+{% endblock %}
