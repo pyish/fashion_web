@@ -1,9 +1,11 @@
-{% extends 'web_app/base.html' %}
+{% extends "web_app/base.html" %}
 
-{% load crispy_forms_tags %}
+{% load humanize %}
+
+{% block title %} Fashion | Mpesa Code  {% endblock %}
+
 
 {% block content %}
-
 
 <div class="container-fluid">
     <!-- Begin Page Content -->
@@ -14,17 +16,19 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Create Account</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Enter the MPesa Code</h1>
                   </div>
                   <form class="user" method="POST">
-                    {% csrf_token %}
-                    {{form|crispy}}
-                  <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">CREATE ACCOUNT</button>
-                  </div>
+                    <div class="input-group">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
                   </form>
                   <div class="border-bottom pt-3">
-                    <small class="text-muted">Already Have an account? <a href="{% url 'login' %}">Login</a></small>
+                    <small class="text-muted">Continue Shopping <a href="{% url 'fashion-home' %}">Home</a></small>
                   </div>
                 </div>
               </div>
@@ -34,4 +38,6 @@
       </div>
 </div>
 
-{% endblock content %}
+
+{% endblock %}
+

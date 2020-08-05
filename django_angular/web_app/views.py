@@ -9,8 +9,8 @@ from django.views.generic import View
 from django.contrib import messages
 from django.db.models import Q 
 
-from users.forms import CheckoutForm, CouponForm
-from users.models import Address, Coupon
+from users.forms import CheckoutForm, CouponForm, MpesaCodeForm
+from users.models import Address, Coupon, MpesaCode
 
 import random
 import string
@@ -323,3 +323,26 @@ class CheckoutView(View):
             messages.warning(self.request, 'You do not have an active order')
             return redirect('order-summary')
 
+
+def payment_view(request):
+    order = Order.objects.get(user=request.user, ordered=False)
+    context = {
+        'order': order
+    }
+    return render(request, 'web_app/payment.html', context)
+
+
+def mpesa_code_view(request):
+    form = MpesaCodeForm(request.POST or None)
+    if form.is_valid():
+        form.save()   
+        mpesa_code = form.cleaned_data.get('code')
+        messages.info(request, f'Mpesa Code {mpesa_code} sent. You will be contacted shortly')
+        return redirect('fashion-home')
+    else:
+        form = MpesaCodeForm()
+
+    context = {
+        'form':form
+    }
+    return render(request, 'web_app/mpesa_code.html', context)

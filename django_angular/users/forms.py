@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from users.models import MpesaCode
 
 PAYMENT_CHOICES = (
     ('M', 'MPESA'),
@@ -33,3 +34,8 @@ class CouponForm(forms.Form):
         'aria-describedby': 'basic-addon2'
     }))
 
+class MpesaCodeForm(forms.ModelForm):
+    class Meta:
+        model = MpesaCode
+        fields = ['code',]
+    
