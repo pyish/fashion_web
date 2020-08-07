@@ -5,7 +5,7 @@ from users.models import MpesaCode
 
 PAYMENT_CHOICES = (
     ('M', 'MPESA'),
-    ('P', 'PayPal')
+    #('P', 'PayPal')
 )
 
 class UserRegistrationForm(UserCreationForm):

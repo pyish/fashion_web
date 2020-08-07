@@ -110,7 +110,10 @@
 								    <span>Kshs {{ related_product.discount_price|intcomma }}</span>
 							{% else %}
 								<span>Kshs {{ related_product.price|intcomma }}</span>
-							{% endif %}
+                            {% endif %}
+                            <div class="pi-links">
+                                <a href="{{ related_product.get_add_to_cart_url }}" class="btn btn-primary"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>

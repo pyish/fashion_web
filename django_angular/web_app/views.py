@@ -27,16 +27,8 @@ def index(request):
         'categories': all_categories,
         'products': all_products.filter(rating=0),
         'offer_products': all_products.filter(rating=1),
-        'ladies_cat' : all_categories.filter(name='Ladies').first(),
-        'footwear' : all_categories.filter(name='Footwear').first(),
-        'suits' : all_categories.filter(name='Suits').first()
     }
     return render(request, 'web_app/index.html', context)
-
-# def about(request):
-#     context = {
-#     }
-#     return render(request, 'web_app/about.html', context)
 
 class Product_list(generic.ListView):
     queryset = Product.objects.all()
@@ -75,15 +67,7 @@ def offer_product(request):
         'offer_count' : all_products.filter(rating=1).count()
     }
     return render(request, 'web_app/offer_products.html', context)
-
-
-# def contact(request):
-#     context = {
-#         'offer_products' : all_products[:4],
-#         'prod' : all_products.first(),
-#         'categories' : all_categories,
-#     }
-#     return render(request, 'web_app/contact.html', context) 
+ 
 
 class SearchResultsView(View):
     def get(self, *args, **kwargs):

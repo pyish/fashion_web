@@ -42,16 +42,16 @@
                     <li><a class="active" href="{% url 'fashion-home' %}">Home</a></li>
                     <li><a href="#">Shop</a>
                         <ul class="sub-menu">
-                            <li><a href="{% url 'fashion-offers' %}">Offer Products</a></li>
-                            {% if user.is_authenticated %}
-                                <li><a href="{% url 'order-summary' %}">My Orders</a></li>
-                                <li><a href="/checkout/">Check out</a></li>
-                            {% endif %}    
+                            <li><a href="{% url 'fashion-offers' %}">Offer Products</a></li>   
                         </ul>
                     </li>
-                    <li><a href="#">About</a></li>
-                    <!-- <li><a href="./check-out.html">Blog</a></li> -->
-                    <li><a href="#">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="#">{{user.username}} Account</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'order-summary' %}">My Orders</a></li> 
+                        </ul>
+                    </li>    
+                    {% endif %} 
                 </ul>
             </nav>
         </div>

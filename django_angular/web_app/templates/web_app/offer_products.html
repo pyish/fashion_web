@@ -68,6 +68,9 @@
 								<span>Kshs {{ product.price|intcomma }}</span>
 							{% endif %}
                             </div>
+                            <div class="pi-links">
+                                <a href="{{ product.get_add_to_cart_url }}" class="btn btn-primary"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}    

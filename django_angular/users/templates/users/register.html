@@ -18,7 +18,20 @@
                   </div>
                   <form class="user" method="POST">
                     {% csrf_token %}
-                    {{form|crispy}}
+                    {% for non_field_error in form.non_field_errors %}
+                      <p class="alert-danger">{{ non_field_error }}</p>
+                    {% endfor %}
+
+                   {{form|crispy}}
+
+                   {% for field in form %}
+                      {% if field.errors %}
+                        {% for error in field.errors %}
+                          <p class="alert-danger">{{ error }}</p>
+                        {% endfor %}
+                      {% endif %}
+                   {% endfor %}
+                   
                   <div class="form-group">
                     <button class="btn btn-outline-info" type="submit">CREATE ACCOUNT</button>
                   </div>
