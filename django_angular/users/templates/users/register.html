@@ -22,8 +22,6 @@
                       <p class="alert-danger">{{ non_field_error }}</p>
                     {% endfor %}
 
-                   {{form|crispy}}
-
                    {% for field in form %}
                       {% if field.errors %}
                         {% for error in field.errors %}
@@ -31,6 +29,8 @@
                         {% endfor %}
                       {% endif %}
                    {% endfor %}
+                   
+                   {{form|crispy}}
                    
                   <div class="form-group">
                     <button class="btn btn-outline-info" type="submit">CREATE ACCOUNT</button>

@@ -593,154 +593,18 @@ ol {
 	transition: all 0.5s ease 0.8s;
 }
 
-/*---------------------
-  Features Section
------------------------*/
 
-.features-section {
-	padding-bottom: 0;
-}
-
-.features-ads {
-	padding-bottom: 67px;
-}
-
-.features-ads .single-features-ads {
-	text-align: center;
-	margin-bottom: 30px;
-}
-
-.features-ads .single-features-ads.first {
-	margin-top: 39px;
-}
-
-.features-ads .single-features-ads.second {
-	margin-top: 8px;
-}
-
-.features-ads .single-features-ads img {
-	margin-bottom: 15px;
-}
-
-.features-ads .single-features-ads h4 {
-	color: #1e1e1e;
-	font-size: 22px;
-	font-weight: 700;
-	line-height: 50px;
-}
-
-.features-ads .single-features-ads p {
-	color: #727272;
-	font-size: 14px;
-	line-height: 27px;
-	font-weight: 500;
-}
-
-.features-box .single-box-item {
-	position: relative;
-}
-
-.features-box .single-box-item.first-box {
-	margin-bottom: 35px;
-}
-
-.features-box .single-box-item.first-box .box-text {
-	position: absolute;
-	right: 60px;
-	top: 106px;
-}
-
-.features-box .single-box-item.first-box .box-text .trend-alert {
-	color: #1e1e1e;
-	display: block;
-	font-size: 22px;
-	font-family: "FuturaBT-Book";
-	letter-spacing: 2px;
-	line-height: 45px;
-	text-transform: uppercase;
-	margin-bottom: 38px;
-}
-
-.features-box .single-box-item.first-box .box-text .primary-btn {
-	border-color: #D0D7DB;
-	color: #1e1e1e;
-}
-
-.features-box .single-box-item.second-box {
-	margin-bottom: 35px;
-}
-
-.features-box .single-box-item.second-box .box-text {
-	position: absolute;
-	left: 56px;
-	top: 150px;
-}
-
-.features-box .single-box-item.second-box .box-text .trend-year {
-	color: #fff;
-	opacity: 1;
-}
-
-.features-box .single-box-item.second-box .box-text .trend-alert {
-	color: #5b5b5b;
-	display: inline-block;
-	font-size: 16px;
-	font-family: "FuturaBT-Book";
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	line-height: 45px;
-}
-
-.features-box .single-box-item.large-box .box-text {
-	position: absolute;
-	left: 125px;
-	top: 60px;
-}
-
-.features-box .single-box-item.large-box .box-text .trend-year {
-	color: #838383;
-	opacity: 1;
-}
-
-.features-box .single-box-item.large-box .box-text h2 {
-	font-size: 60px;
-	font-weight: 700;
-	line-height: 56px;
-}
-
-.features-box .single-box-item.large-box .box-text .trend-alert {
-	color: #5b5b5b;
-	display: inline-block;
-	font-size: 22px;
-	font-family: "FuturaBT-Book";
-	letter-spacing: 2px;
-	line-height: 36px;
-	text-transform: uppercase;
-}
-
-.features-box .single-box-item img {
-	min-width: 100%;
-}
-
-.features-box .single-box-item .box-text .trend-year {
-	color: #1e1e1e;
-	font-size: 22px;
-	font-weight: 700;
-	opacity: 0.32;
-	display: inline-block;
-}
-
-.features-box .single-box-item .box-text h2 {
-	color: #1e1e1e;
-	font-size: 48px;
-	font-weight: 600;
-	line-height: 38px;
-}
 
 /*---------------------
   Latest Product
 -----------------------*/
-
+img {
+	display: block;
+	max-width:500px;
+	max-height:250px;
+	width: auto;
+	height: auto;
+  }
 .latest-products {
 	padding-top: 55px;
 	padding-bottom: 65px;

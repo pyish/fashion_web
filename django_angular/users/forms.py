@@ -26,15 +26,9 @@ class CheckoutForm(forms.Form):
     payment_option = forms.ChoiceField(widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
 
 
-class CouponForm(forms.Form):
-    code = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Promo code',
-        'aria-label': 'Recipient\'s username',
-        'aria-describedby': 'basic-addon2'
-    }))
 
 class MpesaCodeForm(forms.ModelForm):
+    code = forms.CharField(min_length=10)
     class Meta:
         model = MpesaCode
         fields = ['code',]

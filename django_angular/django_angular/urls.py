@@ -29,7 +29,6 @@ from web_app.views import (
     remove_from_cart,
     remove_single_product_from_cart,
     CheckoutView,
-    AddCouponView,
     payment_view,
     mpesa_code_view,
 )
@@ -50,7 +49,6 @@ urlpatterns = [
     path('remove-product-from-cart/<slug:slug>/', remove_single_product_from_cart, name='remove-single-product-from-cart'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
-    path('add-coupon/', AddCouponView.as_view(), name='add-coupon'),
     path('payment-details', payment_view, name='payment'),
     path('mpesa-code/', mpesa_code_view, name='mpesa-code')
 ]

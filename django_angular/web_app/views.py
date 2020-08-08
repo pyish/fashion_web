@@ -9,8 +9,8 @@ from django.views.generic import View
 from django.contrib import messages
 from django.db.models import Q 
 
-from users.forms import CheckoutForm, CouponForm, MpesaCodeForm
-from users.models import Address, Coupon, MpesaCode
+from users.forms import CheckoutForm, MpesaCodeForm
+from users.models import Address,MpesaCode
 
 import random
 import string
@@ -189,29 +189,6 @@ def remove_from_cart(request, slug):
         messages.info(request, 'You do not have an active order')
         return redirect('product-detail', slug=slug)
 
-def get_coupon(request, code):
-    try:
-        coupon = Coupon.objects.get(code=code)
-        return coupon
-    except ObjectDoesNotExist:
-        messages.info(request, 'This coupon does not exist')
-        return redirect('checkout')
-
-class AddCouponView(View):
-    def post(self, *args, **kwargs):
-        form = CouponForm(self.request.POST or None)
-        if form.is_valid():
-            try:
-                code = form.cleaned_data.get('code')
-                order = Order.objects.get(
-                    user=self.request.user, ordered=False)
-                order.coupon = get_coupon(self.request, code)
-                order.save()
-                messages.success(self.request, 'Successfully added coupon')
-                return redirect('checkout')
-            except ObjectDoesNotExist:
-                messages.info(self.request, 'You do not have an active order')
-                return redirect('checkout')
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -220,9 +197,7 @@ class CheckoutView(View):
             form = CheckoutForm()
             context = {
                 'form': form,
-                'couponform': CouponForm(),
                 'order': order,
-                'DISPLAY_COUPON_FORM': True
             }
 
             delivery_address_qs = Address.objects.filter(
@@ -318,8 +293,12 @@ def payment_view(request):
 
 def mpesa_code_view(request):
     form = MpesaCodeForm(request.POST or None)
+    order = Order.objects.get(user=request.user, ordered=False)
     if form.is_valid():
         form.save()   
+        order.ordered = True
+        order.save()
+        
         mpesa_code = form.cleaned_data.get('code')
         messages.info(request, f'Mpesa Code {mpesa_code} sent. You will be contacted shortly')
         return redirect('fashion-home')
