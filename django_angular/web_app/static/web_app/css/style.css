@@ -598,6 +598,15 @@ ol {
 /*---------------------
   Latest Product
 -----------------------*/
+.normal {
+	!important;
+	display: block;
+	max-width:100%;
+	max-height:100%;
+	width: auto;
+	height: auto;
+}
+
 img {
 	display: block;
 	max-width:500px;

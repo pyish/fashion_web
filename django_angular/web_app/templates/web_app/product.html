@@ -96,7 +96,10 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-product-item">
                         <figure>
-                            <a href="{% url 'product-detail' slug=related_product.slug %}"><img src="{{related_product.image.url}}" alt=""></a>
+                            <div class="normal">
+                                <a href="{% url 'product-detail' slug=related_product.slug %}"><img src="{{related_product.image.url}}" alt=""></a>
+                            </div>
+                            
                             <div class="p-status">{{related_product.category}}</div>
                         </figure>
                         <div class="product-text">
