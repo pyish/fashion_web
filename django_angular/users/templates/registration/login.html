@@ -21,9 +21,24 @@
                     <form class="form-signin" method="POST">
                         <div class="form-label-group">
                         {% csrf_token %}
+                        {% for non_field_error in form.non_field_errors %}
+                          <p class="alert-danger">{{ non_field_error }}</p>
+                        {% endfor %}
+
+                        {% for field in form %}
+                        {% if field.errors %}
+                          {% for error in field.errors %}
+                            <div class="alert alert-danger" role="alert">
+                              <p>{{error}}</p>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                        {% endfor %}
+
                         {{form|crispy}}
+
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase mt-2" type="submit" style="width: auto;">Log in</button>
                         <hr class="my-4">
                     </form>
                     <div class="border-bottom pt-3">

@@ -35,13 +35,13 @@
                     <div class="product-slider owl-carousel">
                         <div class="product-img">
                             <figure>
-                                <img src="{{product.image.url}}" alt="">
+                                <img src="{{product.image.url}}" alt="" class="img1-resize">
                                 <div class="p-status">{{product.category}}</div>
                             </figure>
                         </div>
                         <div class="product-img">
                             <figure>
-                                <img src="{{product.image.url}}" alt="">
+                                <img src="{{product.image.url}}" alt="" class="img1-resize">
                                 <div class="p-status">{{product.category}}</div>
                             </figure>
                         </div>
@@ -96,10 +96,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-product-item">
                         <figure>
-                            <div class="normal">
-                                <a href="{% url 'product-detail' slug=related_product.slug %}"><img src="{{related_product.image.url}}" alt=""></a>
-                            </div>
-                            
+                            <a href="{% url 'product-detail' slug=related_product.slug %}"><img src="{{related_product.image.url}}" alt="" class="img-resize"></a>
                             <div class="p-status">{{related_product.category}}</div>
                         </figure>
                         <div class="product-text">

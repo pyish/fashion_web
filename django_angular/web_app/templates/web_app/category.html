@@ -47,7 +47,7 @@
                         <div class="single-product-item">
                             <figure>
                                 <a href="{% url 'product-detail' slug=product.slug %}">
-                                    <img src="{{product.image.url}}" alt="">
+                                    <img src="{{product.image.url}}" alt="" class="img1-resize">
                                 </a>
                                 <div class="p-status">{{product.category}}</div>
                                 <div class="hover-icon">
@@ -80,7 +80,7 @@
                         <div class="single-product-item">
                             <figure>
                                 <a href="{% url 'product-detail' slug=product.slug %}">
-                                    <img src="{{product.image.url}}" alt="">
+                                    <img src="{{product.image.url}}" alt="" class="img-resize">
                                 </a>
                                 <div class="p-status">{{product.category}}</div>
                                 <div class="hover-icon">

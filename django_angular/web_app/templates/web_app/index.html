@@ -60,7 +60,7 @@
                     <div class="col-lg-3 col-sm-6 mix all {{product.category}}">
                         <div class="single-product-item">
                             <figure>
-                                <a href="{% url 'product-detail' slug=product.slug %}"><img src="{{product.image.url}}" alt=""></a>
+                                <a href="{% url 'product-detail' slug=product.slug %}"><img src="{{product.image.url}}" class="img-resize" alt=""></a>
                                 <div class="p-status">{{product.category}}</div>
                             </figure>
                             <div class="product-text">

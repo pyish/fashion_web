@@ -22,15 +22,15 @@
                   
                   <form class="user" action="{% url 'mpesa-code' %}" method="POST">
                     {% csrf_token %}
-                    <p>Select "Pay bill" from your Safaricom MPesa Menu</p>
-                    <p>Select "Enter Business Number".</p>
-                    <p>Enter Fashion House Business Number "8188322".</p>
-                    <p>Select "Enter Account Number".</p>
-                    <p>Enter Your Mobile Number  (SPACE) Name".</p>
-                    <p>Enter Amount KSH {{ order.get_total |intcomma }}</p>
-                    <p>Press "OK" Only when you are sure of all the details You entered.</p>
+                    <p class="p-tag">Select "Pay bill" from your Safaricom MPesa Menu</p>
+                    <p class="p-tag">Select "Enter Business Number".</p>
+                    <p class="p-tag">Enter Fashion House Business Number "8188322".</p>
+                    <p class="p-tag">Select "Enter Account Number".</p>
+                    <p class="p-tag">Enter Your Mobile Number  (SPACE) Name".</p>
+                    <p class="p-tag">Enter Amount KSH {{ order.get_total |intcomma }}</p>
+                    <p class="p-tag">Press "OK" Only when you are sure of all the details You entered.</p>
                   <div class="form-group">
-                    <button class="btn btn-outline-info">CONTINUE</button>
+                    <button class="btn btn-primary">CONTINUE</button>
                   </div>
                   </form>
                 </div>

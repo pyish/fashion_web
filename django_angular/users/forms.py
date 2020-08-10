@@ -26,7 +26,6 @@ class CheckoutForm(forms.Form):
     payment_option = forms.ChoiceField(widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
 
 
-
 class MpesaCodeForm(forms.ModelForm):
     code = forms.CharField(min_length=10)
     class Meta:

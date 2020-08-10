@@ -25,7 +25,9 @@
                    {% for field in form %}
                       {% if field.errors %}
                         {% for error in field.errors %}
-                          <p class="alert-danger">{{ error }}</p>
+                          <div class="alert alert-danger" role="alert">
+                            <p>{{error}}</p>
+                          </div>
                         {% endfor %}
                       {% endif %}
                    {% endfor %}
@@ -33,7 +35,7 @@
                    {{form|crispy}}
                    
                   <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">CREATE ACCOUNT</button>
+                    <button class="btn btn-primary" type="submit">CREATE ACCOUNT</button>
                   </div>
                   </form>
                   <div class="border-bottom pt-3">

@@ -598,22 +598,26 @@ ol {
 /*---------------------
   Latest Product
 -----------------------*/
-.normal {
-	!important;
-	display: block;
-	max-width:100%;
-	max-height:100%;
-	width: auto;
-	height: auto;
+.p-tag {
+	color: #000;
 }
 
-img {
+.img1-resize {
 	display: block;
 	max-width:500px;
-	max-height:250px;
+	max-height:550px;
 	width: auto;
 	height: auto;
   }
+
+.img-resize {
+	display: block;
+	max-width:500px;
+	max-height:280px;
+	width: auto;
+	height: auto;
+  }
+
 .latest-products {
 	padding-top: 55px;
 	padding-bottom: 65px;
