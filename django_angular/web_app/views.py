@@ -54,9 +54,7 @@ def categorydetail(request,pk):
         'categories' : all_categories,
         'cat_count': Product.objects.filter(category__name = cat).count(),
         'first2_prods': Product.objects.filter(category__name =cat)[:2], #Offer
-        'four_prods': Product.objects.filter(category__name =cat)[2:],
-        # 'other_four_prods': Product.objects.filter(category__name =cat)[6:10],
-        # 'large_prod' :  Product.objects.filter(category__name =cat)[1],  
+        'other_prods': Product.objects.filter(category__name =cat)[2:], 
     }
     
     return render(request, 'web_app/category.html', context)

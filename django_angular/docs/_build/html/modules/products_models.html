@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Models &#8212; Fashion_web 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Users Models" href="users_models.html" />
+    <link rel="prev" title="Webapp Views" href="webapp_views.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-products.models">
+<span id="products-models"></span><h1>Products Models<a class="headerlink" href="#module-products.models" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="products.models.Category">
+<em class="property">class </em><code class="sig-prename descclassname">products.models.</code><code class="sig-name descname">Category</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Category" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="products.models.Category.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#products.models.Category.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="products.models.Category.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#products.models.Category.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Category.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#products.models.Category.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Category.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#products.models.Category.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Category.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#products.models.Category.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Category.product_set">
+<code class="sig-name descname">product_set</code><a class="headerlink" href="#products.models.Category.product_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="products.models.Order">
+<em class="property">class </em><code class="sig-prename descclassname">products.models.</code><code class="sig-name descname">Order</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">ref_code</span></em>, <em class="sig-param"><span class="n">start_date</span></em>, <em class="sig-param"><span class="n">ordered_date</span></em>, <em class="sig-param"><span class="n">ordered</span></em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="products.models.Order.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#products.models.Order.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="products.models.Order.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#products.models.Order.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Order.get_next_by_ordered_date">
+<code class="sig-name descname">get_next_by_ordered_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: ordered_date&gt;</em>, <em class="sig-param">is_next=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order.get_next_by_ordered_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Order.get_next_by_start_date">
+<code class="sig-name descname">get_next_by_start_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: start_date&gt;</em>, <em class="sig-param">is_next=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order.get_next_by_start_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Order.get_previous_by_ordered_date">
+<code class="sig-name descname">get_previous_by_ordered_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: ordered_date&gt;</em>, <em class="sig-param">is_next=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order.get_previous_by_ordered_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Order.get_previous_by_start_date">
+<code class="sig-name descname">get_previous_by_start_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: start_date&gt;</em>, <em class="sig-param">is_next=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order.get_previous_by_start_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Order.get_total">
+<code class="sig-name descname">get_total</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Order.get_total" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#products.models.Order.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#products.models.Order.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.ordered">
+<code class="sig-name descname">ordered</code><a class="headerlink" href="#products.models.Order.ordered" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.ordered_date">
+<code class="sig-name descname">ordered_date</code><a class="headerlink" href="#products.models.Order.ordered_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.products">
+<code class="sig-name descname">products</code><a class="headerlink" href="#products.models.Order.products" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.ref_code">
+<code class="sig-name descname">ref_code</code><a class="headerlink" href="#products.models.Order.ref_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.start_date">
+<code class="sig-name descname">start_date</code><a class="headerlink" href="#products.models.Order.start_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#products.models.Order.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Order.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#products.models.Order.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="products.models.OrderProduct">
+<em class="property">class </em><code class="sig-prename descclassname">products.models.</code><code class="sig-name descname">OrderProduct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">ordered</span></em>, <em class="sig-param"><span class="n">product</span></em>, <em class="sig-param"><span class="n">quantity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.OrderProduct" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="products.models.OrderProduct.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#products.models.OrderProduct.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="products.models.OrderProduct.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#products.models.OrderProduct.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.OrderProduct.get_ammount_saved">
+<code class="sig-name descname">get_ammount_saved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.OrderProduct.get_ammount_saved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.OrderProduct.get_discount_product_price">
+<code class="sig-name descname">get_discount_product_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.OrderProduct.get_discount_product_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.OrderProduct.get_final_price">
+<code class="sig-name descname">get_final_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.OrderProduct.get_final_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.OrderProduct.get_total_product_price">
+<code class="sig-name descname">get_total_product_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.OrderProduct.get_total_product_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#products.models.OrderProduct.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#products.models.OrderProduct.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.order_set">
+<code class="sig-name descname">order_set</code><a class="headerlink" href="#products.models.OrderProduct.order_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.ordered">
+<code class="sig-name descname">ordered</code><a class="headerlink" href="#products.models.OrderProduct.ordered" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.product">
+<code class="sig-name descname">product</code><a class="headerlink" href="#products.models.OrderProduct.product" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.product_id">
+<code class="sig-name descname">product_id</code><a class="headerlink" href="#products.models.OrderProduct.product_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.quantity">
+<code class="sig-name descname">quantity</code><a class="headerlink" href="#products.models.OrderProduct.quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#products.models.OrderProduct.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.OrderProduct.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#products.models.OrderProduct.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="products.models.Product">
+<em class="property">class </em><code class="sig-prename descclassname">products.models.</code><code class="sig-name descname">Product</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">slug</span></em>, <em class="sig-param"><span class="n">description</span></em>, <em class="sig-param"><span class="n">category</span></em>, <em class="sig-param"><span class="n">price</span></em>, <em class="sig-param"><span class="n">discount_price</span></em>, <em class="sig-param"><span class="n">rating</span></em>, <em class="sig-param"><span class="n">created_on</span></em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py exception">
+<dt id="products.models.Product.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#products.models.Product.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="products.models.Product.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#products.models.Product.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.category">
+<code class="sig-name descname">category</code><a class="headerlink" href="#products.models.Product.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.category_id">
+<code class="sig-name descname">category_id</code><a class="headerlink" href="#products.models.Product.category_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.created_on">
+<code class="sig-name descname">created_on</code><a class="headerlink" href="#products.models.Product.created_on" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#products.models.Product.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.discount_price">
+<code class="sig-name descname">discount_price</code><a class="headerlink" href="#products.models.Product.discount_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_absolute_url">
+<code class="sig-name descname">get_absolute_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_add_to_cart_url">
+<code class="sig-name descname">get_add_to_cart_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_add_to_cart_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_next_by_created_on">
+<code class="sig-name descname">get_next_by_created_on</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: created_on&gt;</em>, <em class="sig-param">is_next=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_next_by_created_on" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_previous_by_created_on">
+<code class="sig-name descname">get_previous_by_created_on</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: created_on&gt;</em>, <em class="sig-param">is_next=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_previous_by_created_on" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_rating_display">
+<code class="sig-name descname">get_rating_display</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.IntegerField: rating&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_rating_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="products.models.Product.get_remove_from_cart_url">
+<code class="sig-name descname">get_remove_from_cart_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#products.models.Product.get_remove_from_cart_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#products.models.Product.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.image">
+<code class="sig-name descname">image</code><a class="headerlink" href="#products.models.Product.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just like the FileDescriptor, but for ImageFields. The only difference is
+assigning the width/height to the width_field/height_field, if appropriate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#products.models.Product.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.orderproduct_set">
+<code class="sig-name descname">orderproduct_set</code><a class="headerlink" href="#products.models.Product.orderproduct_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.price">
+<code class="sig-name descname">price</code><a class="headerlink" href="#products.models.Product.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.rating">
+<code class="sig-name descname">rating</code><a class="headerlink" href="#products.models.Product.rating" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.slug">
+<code class="sig-name descname">slug</code><a class="headerlink" href="#products.models.Product.slug" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="products.models.Product.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#products.models.Product.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Fashion_web</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="all-about-me.html">All about me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapp_views.html">Webapp Views</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Products Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users_models.html">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">django_angular</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="webapp_views.html" title="previous chapter">Webapp Views</a></li>
+      <li>Next: <a href="users_models.html" title="next chapter">Users Models</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jeremiah George.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/modules/products_models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

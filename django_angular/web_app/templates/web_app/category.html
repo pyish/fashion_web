@@ -75,7 +75,7 @@
                     </div>
                 {% endfor %}
 
-                {% for product in four_prods %}
+                {% for product in other_prods %}
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product-item">
                             <figure>
@@ -108,52 +108,7 @@
                     </div>
                 {% endfor %}    
                 
-                <!-- <div class="col-lg-6 col-md-6">
-                    <div class="row">
-                        {% for product in other_four_prods %}
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-product-item">
-                                    <figure>
-                                        <img src="{{product.image.url}}" alt="">
-                                        <div class="p-status sale">{{product.category}}</div>
-                                    </figure>
-                                    <div class="product-text">
-                                        <a href="#">
-                                            <h6>{{product.title}}</h6>
-                                        </a>
-                                        {% if product.discount_price %}
-								<span class="mr-1">
-									<del>Kshs {{ product.price|intcomma }}</del>
-								</span>
-								    <span>Kshs {{ product.discount_price|intcomma }}</span>
-							{% else %}
-								<span>Kshs {{ product.price|intcomma }}</span>
-							{% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-product-item">
-                        <figure>
-                            <img src="{{large_prod.image.url}}" alt="">
-                            <div class="p-status">{{product.category}}</div>
-                            <div class="hover-icon">
-                                <a href="{{large_prod.image.url}}" class="pop-up"><img src="{% static 'web_app/img/icons/zoom-plus.png' %}"
-                                        alt=""></a>
-                            </div>
-                        </figure>
-                        <div class="product-text">
-                            <a href="#">
-                                <h6>{{large_prod.title}}</h6>
-                            </a>
-                            <p>KSH {{large_prod.price}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+               
         </div>
     </section>
     <!-- Categories Page Section End -->

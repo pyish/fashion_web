@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>users package &#8212; Fashion_web 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="users-package">
+<h1>users package<a class="headerlink" href="#users-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="users.migrations.html">users.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="users.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.migrations.html#module-users.migrations.0001_initial">users.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.migrations.html#module-users.migrations.0002_auto_20200808_0315">users.migrations.0002_auto_20200808_0315 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.migrations.html#module-users.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-users.admin">
+<span id="users-admin-module"></span><h2>users.admin module<a class="headerlink" href="#module-users.admin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-users.apps">
+<span id="users-apps-module"></span><h2>users.apps module<a class="headerlink" href="#module-users.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="users.apps.UsersConfig">
+<em class="property">class </em><code class="sig-prename descclassname">users.apps.</code><code class="sig-name descname">UsersConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">app_name</span></em>, <em class="sig-param"><span class="n">app_module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#users.apps.UsersConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="users.apps.UsersConfig.name">
+<code class="sig-name descname">name</code><em class="property"> = 'users'</em><a class="headerlink" href="#users.apps.UsersConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-users.forms">
+<span id="users-forms-module"></span><h2>users.forms module<a class="headerlink" href="#module-users.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="users.forms.CheckoutForm">
+<em class="property">class </em><code class="sig-prename descclassname">users.forms.</code><code class="sig-name descname">CheckoutForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#users.forms.CheckoutForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<dl class="py attribute">
+<dt id="users.forms.CheckoutForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'delivery_address': &lt;django.forms.fields.CharField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'mobi_number': &lt;django.forms.fields.IntegerField object&gt;, 'payment_option': &lt;django.forms.fields.ChoiceField object&gt;}</em><a class="headerlink" href="#users.forms.CheckoutForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.CheckoutForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'delivery_address': &lt;django.forms.fields.CharField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'mobi_number': &lt;django.forms.fields.IntegerField object&gt;, 'payment_option': &lt;django.forms.fields.ChoiceField object&gt;}</em><a class="headerlink" href="#users.forms.CheckoutForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="users.forms.CheckoutForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#users.forms.CheckoutForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="users.forms.MpesaCodeForm">
+<em class="property">class </em><code class="sig-prename descclassname">users.forms.</code><code class="sig-name descname">MpesaCodeForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#users.forms.MpesaCodeForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="users.forms.MpesaCodeForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#users.forms.MpesaCodeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="users.forms.MpesaCodeForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ['code']</em><a class="headerlink" href="#users.forms.MpesaCodeForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.MpesaCodeForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#users.forms.MpesaCodeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#users.models.MpesaCode" title="users.models.MpesaCode"><code class="xref py py-class docutils literal notranslate"><span class="pre">users.models.MpesaCode</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.MpesaCodeForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'code': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#users.forms.MpesaCodeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.MpesaCodeForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'code': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#users.forms.MpesaCodeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="users.forms.MpesaCodeForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#users.forms.MpesaCodeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="users.forms.UserRegistrationForm">
+<em class="property">class </em><code class="sig-prename descclassname">users.forms.</code><code class="sig-name descname">UserRegistrationForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#users.forms.UserRegistrationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.forms.UserCreationForm</span></code></p>
+<dl class="py class">
+<dt id="users.forms.UserRegistrationForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#users.forms.UserRegistrationForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="users.forms.UserRegistrationForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ['username', 'email', 'phone', 'password1', 'password2']</em><a class="headerlink" href="#users.forms.UserRegistrationForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.UserRegistrationForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#users.forms.UserRegistrationForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.models.User</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.UserRegistrationForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;, 'phone': &lt;django.forms.fields.IntegerField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#users.forms.UserRegistrationForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.forms.UserRegistrationForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;, 'phone': &lt;django.forms.fields.IntegerField object&gt;}</em><a class="headerlink" href="#users.forms.UserRegistrationForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="users.forms.UserRegistrationForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#users.forms.UserRegistrationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-users.models">
+<span id="users-models-module"></span><h2>users.models module<a class="headerlink" href="#module-users.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="users.models.Address">
+<em class="property">class </em><code class="sig-prename descclassname">users.models.</code><code class="sig-name descname">Address</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">mobi_number</span></em>, <em class="sig-param"><span class="n">delivery_address</span></em>, <em class="sig-param"><span class="n">default</span></em><span class="sig-paren">)</span><a class="headerlink" href="#users.models.Address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="users.models.Address.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#users.models.Address.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="users.models.Address.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#users.models.Address.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.default">
+<code class="sig-name descname">default</code><a class="headerlink" href="#users.models.Address.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.delivery_address">
+<code class="sig-name descname">delivery_address</code><a class="headerlink" href="#users.models.Address.delivery_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#users.models.Address.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.mobi_number">
+<code class="sig-name descname">mobi_number</code><a class="headerlink" href="#users.models.Address.mobi_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#users.models.Address.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#users.models.Address.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.Address.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#users.models.Address.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="users.models.MpesaCode">
+<em class="property">class </em><code class="sig-prename descclassname">users.models.</code><code class="sig-name descname">MpesaCode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#users.models.MpesaCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="users.models.MpesaCode.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#users.models.MpesaCode.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="users.models.MpesaCode.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#users.models.MpesaCode.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.MpesaCode.code">
+<code class="sig-name descname">code</code><a class="headerlink" href="#users.models.MpesaCode.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.MpesaCode.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#users.models.MpesaCode.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="users.models.MpesaCode.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#users.models.MpesaCode.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-users.tests">
+<span id="users-tests-module"></span><h2>users.tests module<a class="headerlink" href="#module-users.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-users.views">
+<span id="users-views-module"></span><h2>users.views module<a class="headerlink" href="#module-users.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="users.views.register">
+<code class="sig-prename descclassname">users.views.</code><code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#users.views.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-users">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-users" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Fashion_web</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/all-about-me.html">All about me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/views.html">Views</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jeremiah George.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/users.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

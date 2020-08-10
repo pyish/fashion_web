@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web_app package &#8212; Fashion_web 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="web_app.migrations package" href="web_app.migrations.html" />
+    <link rel="prev" title="users.migrations package" href="users.migrations.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="web-app-package">
+<h1>web_app package<a class="headerlink" href="#web-app-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web_app.migrations.html">web_app.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_app.migrations.html#module-web_app.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web_app.templatetags.html">web_app.templatetags package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web_app.templatetags.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_app.templatetags.html#module-web_app.templatetags.cart_template_tags">web_app.templatetags.cart_template_tags module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_app.templatetags.html#module-web_app.templatetags">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_app.admin">
+<span id="web-app-admin-module"></span><h2>web_app.admin module<a class="headerlink" href="#module-web_app.admin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_app.apps">
+<span id="web-app-apps-module"></span><h2>web_app.apps module<a class="headerlink" href="#module-web_app.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="web_app.apps.WebAppConfig">
+<em class="property">class </em><code class="sig-prename descclassname">web_app.apps.</code><code class="sig-name descname">WebAppConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">app_name</span></em>, <em class="sig-param"><span class="n">app_module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.apps.WebAppConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="web_app.apps.WebAppConfig.name">
+<code class="sig-name descname">name</code><em class="property"> = 'web_app'</em><a class="headerlink" href="#web_app.apps.WebAppConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web_app.models">
+<span id="web-app-models-module"></span><h2>web_app.models module<a class="headerlink" href="#module-web_app.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_app.tests">
+<span id="web-app-tests-module"></span><h2>web_app.tests module<a class="headerlink" href="#module-web_app.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_app.urls">
+<span id="web-app-urls-module"></span><h2>web_app.urls module<a class="headerlink" href="#module-web_app.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_app.views">
+<span id="web-app-views-module"></span><h2>web_app.views module<a class="headerlink" href="#module-web_app.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="web_app.views.CheckoutView">
+<em class="property">class </em><code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">CheckoutView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.CheckoutView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.View</span></code></p>
+<dl class="py method">
+<dt id="web_app.views.CheckoutView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.CheckoutView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="web_app.views.CheckoutView.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.CheckoutView.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="web_app.views.OrderSummaryView">
+<em class="property">class </em><code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">OrderSummaryView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.OrderSummaryView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.mixins.LoginRequiredMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.View</span></code></p>
+<dl class="py method">
+<dt id="web_app.views.OrderSummaryView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.OrderSummaryView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="web_app.views.Product_list">
+<em class="property">class </em><code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">Product_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.Product_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<dl class="py attribute">
+<dt id="web_app.views.Product_list.paginate_by">
+<code class="sig-name descname">paginate_by</code><em class="property"> = 3</em><a class="headerlink" href="#web_app.views.Product_list.paginate_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_app.views.Product_list.queryset">
+<code class="sig-name descname">queryset</code><em class="property"> = &lt;QuerySet [&lt;Product: Red Handbag&gt;, &lt;Product: Kanznu Swah&gt;, &lt;Product: Clasy Dress&gt;, &lt;Product: Ladies Boots&gt;, &lt;Product: Kitenge dress&gt;, &lt;Product: Kid Nigerian Suit&gt;, &lt;Product: Purple Bed cover duvet&gt;, &lt;Product: Cream Ladies Handbag&gt;, &lt;Product: Fly Kitenge&gt;, &lt;Product: Cool Look Kid&gt;, &lt;Product: Cream Handbag&gt;, &lt;Product: Men Suits&gt;, &lt;Product: Cool swag vans&gt;, &lt;Product: Kid kitenge&gt;]&gt;</em><a class="headerlink" href="#web_app.views.Product_list.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_app.views.Product_list.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'web_app/all_products.html'</em><a class="headerlink" href="#web_app.views.Product_list.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="web_app.views.SearchResultsView">
+<em class="property">class </em><code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">SearchResultsView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.SearchResultsView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.View</span></code></p>
+<dl class="py method">
+<dt id="web_app.views.SearchResultsView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.SearchResultsView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.add_to_cart">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">add_to_cart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">slug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.add_to_cart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.categorydetail">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">categorydetail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">pk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.categorydetail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.create_ref_code">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">create_ref_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.create_ref_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.index">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.mpesa_code_view">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">mpesa_code_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.mpesa_code_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.offer_product">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">offer_product</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.offer_product" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.payment_view">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">payment_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.payment_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.product_detail">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">product_detail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">slug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.product_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.remove_from_cart">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">remove_from_cart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">slug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.remove_from_cart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="web_app.views.remove_single_product_from_cart">
+<code class="sig-prename descclassname">web_app.views.</code><code class="sig-name descname">remove_single_product_from_cart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">slug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_app.views.remove_single_product_from_cart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-web_app">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-web_app" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Fashion_web</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules/all-about-me.html">All about me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/webapp_views.html">Webapp Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/products_models.html">Products_Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/users_models.html">Users_Models</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">django_angular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="django_angular.html">django_angular package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="products.html">products package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">users package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">web_app package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">django_angular</a><ul>
+      <li>Previous: <a href="users.migrations.html" title="previous chapter">users.migrations package</a></li>
+      <li>Next: <a href="web_app.migrations.html" title="next chapter">web_app.migrations package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Jeremiah George.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/web_app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
